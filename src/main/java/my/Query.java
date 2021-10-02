@@ -13,7 +13,7 @@ public class Query implements GraphQLQueryResolver {
     }
 
     private List<Cup> getCupsBySize(String size) {
-        return cupService.getCups(size);
+        return cupService.getCupsBySize(size);
     }
 
     private List<Cup> getAllCups() {

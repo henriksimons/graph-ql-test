@@ -12,4 +12,6 @@ public class AppGraphQlApplication {
 		SpringApplication.run(AppGraphQlApplication.class, args);
 	}
 
+
+
 }

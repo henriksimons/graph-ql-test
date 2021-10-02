@@ -1,4 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: my.AppGraphQlApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.328 s - in my.AppGraphQlApplicationTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.447 s <<< FAILURE! - in my.AppGraphQlApplicationTests
+contextLoads  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'schemaParser' defined in class path resource [com/oembedler/moon/graphql/boot/GraphQLJavaToolsAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.coxautodev.graphql.tools.SchemaParser]: Factory method 'schemaParser' threw exception; nested exception is java.lang.IllegalStateException: No graphql schema files found on classpath with location pattern '**/*.graphqls'.  Please add a graphql schema to the classpath or add a SchemaParser bean to your application context.
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.coxautodev.graphql.tools.SchemaParser]: Factory method 'schemaParser' threw exception; nested exception is java.lang.IllegalStateException: No graphql schema files found on classpath with location pattern '**/*.graphqls'.  Please add a graphql schema to the classpath or add a SchemaParser bean to your application context.
+Caused by: java.lang.IllegalStateException: No graphql schema files found on classpath with location pattern '**/*.graphqls'.  Please add a graphql schema to the classpath or add a SchemaParser bean to your application context.
+

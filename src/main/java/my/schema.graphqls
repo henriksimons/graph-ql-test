@@ -5,9 +5,9 @@ type Cup {
 
 # The Root Query for the application
 type Query {
-    getCupsBySize(size: String): [Cup]!
+    getCupsBySize(size: String): [Cup]
 
-    getAllCups: [Cup]!
+    getAllCups: [Cup]
 }
 
 # The Root Mutation for the application

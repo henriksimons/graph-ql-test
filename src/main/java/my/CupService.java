@@ -15,15 +15,15 @@ public class CupService {
         cups = init();
     }
 
-    public List<Cup> init() {
-        Cup cup0 = new Cup("small", "espresso");
-        Cup cup1 = new Cup("medium", "cappuccino");
-        Cup cup2 = new Cup("large", "latte");
-        Cup cup3 = new Cup("large", "brew");
-        return Arrays.asList(cup0, cup1, cup2, cup3);
+    private List<Cup> init() {
+        Cup brew = Cup.builder().withSize("medium").withLiquid("brew").build();
+        Cup cappuccino = Cup.builder().withSize("small").withLiquid("cappuccino").build();
+        Cup espresso = Cup.builder().withSize("small").withLiquid("espresso").build();
+        Cup latte = Cup.builder().withSize("large").withLiquid("latte").build();
+        return Arrays.asList(brew, cappuccino, espresso, latte);
     }
 
-    public List<Cup> getCups(String size) {
+    public List<Cup> getCupsBySize(String size) {
         return cups.stream()
                 .filter(cup -> cup.getSize().equals(size))
                 .collect(Collectors.toList());
