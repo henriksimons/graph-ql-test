@@ -12,11 +12,11 @@ public class Query implements GraphQLQueryResolver {
         this.cupService = cupService;
     }
 
-    private List<Cup> getCupsBySize(String size){
+    private List<Cup> getCupsBySize(String size) {
         return cupService.getCups(size);
     }
 
-    private List<Cup> getAllCups(){
+    private List<Cup> getAllCups() {
         return cupService.getCups();
     }
 }
