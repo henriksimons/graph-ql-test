@@ -45,7 +45,7 @@ public class Cup {
             return this;
         }
 
-        public Builder withLiquid(String size) {
+        public Builder withLiquid(String liquid) {
             this.liquid = liquid;
             return this;
         }

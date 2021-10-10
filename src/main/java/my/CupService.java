@@ -1,15 +1,17 @@
 package my;
 
+import graphql.schema.DataFetcher;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service
+@Component
 public class CupService {
 
-    private List<Cup> cups;
+    private final List<Cup> cups;
 
     public CupService() {
         cups = init();
@@ -31,5 +33,12 @@ public class CupService {
 
     public List<Cup> getCups() {
         return cups;
+    }
+
+    public DataFetcher<List<Cup>> getCupsBySizeDataFetcher() {
+        return dataFetchingEnvironment -> {
+            String size = dataFetchingEnvironment.getArgument("size");
+            return getCupsBySize(size);
+        };
     }
 }
