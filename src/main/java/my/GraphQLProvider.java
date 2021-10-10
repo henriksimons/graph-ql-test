@@ -50,6 +50,8 @@ public class GraphQLProvider {
         return RuntimeWiring.newRuntimeWiring()
                 .type(newTypeWiring("Query")
                         .dataFetcher("getCupsBySize", graphQLDataFetchers.getCupsBySizeDataFetcher()))
+                .type(newTypeWiring("Query")
+                        .dataFetcher("getAllCups", graphQLDataFetchers.getAllCupsDataFetcher()))
                 .build();
     }
 }

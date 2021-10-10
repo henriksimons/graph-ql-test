@@ -41,4 +41,8 @@ public class CupService {
             return getCupsBySize(size);
         };
     }
+
+    public DataFetcher<List<Cup>> getAllCupsDataFetcher() {
+        return dataFetchingEnvironment -> getCups();
+    }
 }

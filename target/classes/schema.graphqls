@@ -1,6 +1,8 @@
 # The Root Query for the application
 type Query {
     getCupsBySize(size: String): [Cup]
+
+    getAllCups: [Cup]
 }
 
 type Cup {
